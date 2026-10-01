@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#f8f5ec">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='9' fill='%23123e38'/><circle cx='11' cy='12.5' r='3.4' fill='%23f8f5ec'/><circle cx='21' cy='12.5' r='3.4' fill='%23f8f5ec'/><path d='M9.6 21.4c2.6 2.9 10.2 2.9 12.8 0' stroke='%23df8a2a' stroke-width='2.5' fill='none' stroke-linecap='round'/></svg>">
+<title>naiwa-hub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- 桌面端左侧竖栏（窄屏隐藏） -->
+  <aside class="sidebar">
+    <div class="sidebar__head">
+      <div class="wordmark">naiwa<span class="wordmark__hy">-</span>hub</div>
+      <p class="tagline" data-tagline></p>
+    </div>
+    <nav class="nav" id="nav" aria-label="游戏列表"></nav>
+    <button class="sidebtn" type="button" data-act="random">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="9" cy="9" r="1.15" fill="currentColor" stroke="none"/><circle cx="15" cy="9" r="1.15" fill="currentColor" stroke="none"/><circle cx="9" cy="15" r="1.15" fill="currentColor" stroke="none"/><circle cx="15" cy="15" r="1.15" fill="currentColor" stroke="none"/></svg>
+      随机来一局
+    </button>
+  </aside>
+
+  <main class="main">
+
+    <!-- ===== 游戏视图 ===== -->
+    <section class="view" id="view-game" hidden>
+      <div class="topbar">
+        <button class="tb-back" type="button" data-act="home">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 5.5 8 12l6.5 6.5"/></svg>
+          主页
+        </button>
+        <h1 class="tb-title" id="tb-title"></h1>
+        <button class="tb-icon" type="button" id="btn-fs" data-act="fullscreen" aria-label="全屏" title="全屏">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V5.6A1.6 1.6 0 0 1 5.6 4H9"/><path d="M15 4h3.4A1.6 1.6 0 0 1 20 5.6V9"/><path d="M20 15v3.4a1.6 1.6 0 0 1-1.6 1.6H15"/><path d="M9 20H5.6A1.6 1.6 0 0 1 4 18.4V15"/></svg>
+        </button>
+        <button class="tb-icon" type="button" data-act="menu" aria-label="更多" title="更多">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5.5" cy="12" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="18.5" cy="12" r="1.7"/></svg>
+        </button>
+        <div class="popover" id="popover" hidden>
+          <button type="button" data-act="random">随机来一局</button>
+          <button type="button" data-act="reload">重新载入</button>
+          <button type="button" data-act="external">在新窗口打开</button>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="frame" id="frame">
+          <div class="loading" id="loading">
+            <div class="loading__tile" id="loading-tile"></div>
+            <p class="loading__text" id="loading-text"></p>
+            <p class="loading__hint">首次打开要下载一些资源，稍等一下</p>
+          </div>
+          <iframe id="game-frame" title="游戏画面"
+                  allow="autoplay; fullscreen; gamepad; clipboard-write"
+                  allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <button class="exit-fs" type="button" id="exit-fs" data-act="fullscreen" hidden>退出全屏</button>
+    </section>
+
+    <!-- ===== 首页视图 ===== -->
+    <section class="view" id="view-home" hidden>
+      <div class="home">
+        <div class="home__inner">
+          <header class="home__head">
+            <div class="wordmark">naiwa<span class="wordmark__hy">-</span>hub</div>
+            <p class="tagline" data-tagline></p>
+          </header>
+          <div class="cards" id="cards"></div>
+          <p class="foot">全部游戏都在同一个页面里打开 · 电脑上按数字键 1–5 可快速切换</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="boot" id="boot"><p>正在载入…</p></div>
+    <div class="error" id="error" hidden></div>
+
+  </main>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

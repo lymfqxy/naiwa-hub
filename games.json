@@ -1,0 +1,60 @@
+{
+  "site": {
+    "name": "naiwa-hub",
+    "tagline": "五个奶蛙小游戏，都在一个页面里打开。"
+  },
+
+  "_说明": [
+    "要加一个新游戏：把下面某一段整个复制，粘在列表末尾，改 id / title / mark / color / desc / url 六项即可。",
+    "id       —— 网址里那一小段英文，只能用小写字母、数字和减号，不能和别的重复。",
+    "title    —— 卡片上显示的名字。",
+    "mark     —— 色块里的那一个字。",
+    "color    —— 色块颜色。白色字要看得清，别选太浅的。",
+    "desc     —— 一句话简介。",
+    "url      —— 游戏网址，必须以 http 开头。",
+    "改完保存，把整个文件夹重新拖到 Cloudflare 一次就生效。"
+  ],
+
+  "games": [
+    {
+      "id": "street-dance",
+      "title": "奶娃街舞",
+      "mark": "舞",
+      "color": "#6B4CD4",
+      "desc": "跟上节拍踩准箭头，换舞池、换舞装，一路跳到地狱难度。",
+      "url": "https://nailong-dance.pages.dev/"
+    },
+    {
+      "id": "merge",
+      "title": "合成大奶娃",
+      "mark": "合",
+      "color": "#B0731A",
+      "desc": "拖动瞄准、松手投放，两只一样的撞在一起，合成更大的一只。",
+      "url": "https://yhsome.github.io/BigNaiWa/"
+    },
+    {
+      "id": "match3",
+      "title": "奶蛙消消乐",
+      "mark": "消",
+      "color": "#4A85D6",
+      "desc": "把一样的连成一线消掉，消得越多分数越高。",
+      "url": "https://chenckx0614.github.io/naiwaxxl/"
+    },
+    {
+      "id": "factory",
+      "title": "奶蛙工厂",
+      "mark": "厂",
+      "color": "#8E3B22",
+      "desc": "od 厂长的邪恶罐头工厂开工了，蛋蛋帮他抓遍天下奶蛙。",
+      "url": "https://66970010-boop.github.io/frog-miner/"
+    },
+    {
+      "id": "nest",
+      "title": "奶娃的小窝",
+      "mark": "窝",
+      "color": "#2E8C7E",
+      "desc": "吃点甜、洗泡泡、玩一局，慢慢把属于你们的小窝布置起来。",
+      "url": "https://naiwaxiaowu.pages.dev/"
+    }
+  ]
+}
